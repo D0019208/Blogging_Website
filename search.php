@@ -53,10 +53,10 @@
 }
 </style>
 <?php
-$db_username = 'd00192082'; // Your MYSQL Username.
-$db_password = '3820065Np2'; // Your MYSQL Password.
-$db_name = 'd00192082_blogusers'; // Your Database name.
-$db_host = 'mysql-d00192082.alwaysdata.net';
+$db_username = ''; // Your MYSQL Username.
+$db_password = ''; // Your MYSQL Password.
+$db_name = ''; // Your Database name.
+$db_host = '';
 
 $x = 1;
 
@@ -66,7 +66,7 @@ $conDB = mysqli_connect($db_host, $db_username, $db_password, $db_name)or die('E
 require_once 'header.php';
 require_once 'functions.php';
 
-$connect = mysqli_connect("mysql-d00192082.alwaysdata.net", "d00192082", "3820065Np2", "d00192082_blogusers");
+$connect = mysqli_connect("", "", "", "");
 
 ?>  
 
@@ -160,7 +160,13 @@ $connect = mysqli_connect("mysql-d00192082.alwaysdata.net", "d00192082", "382006
 
                                         if (floor($years) != 0) {
                                             echo floor($years);
-                                            echo ' year ago';
+                                            if(floor($years) > 1)
+                                            {
+                                                echo ' years ago';
+                                            } else {
+                                                echo ' year ago';
+                                            }
+                                            
                                         } else if (floor($months) != 0) {
                                             echo floor($months);
                                             echo ' months ago';

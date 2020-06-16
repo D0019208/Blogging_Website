@@ -8,7 +8,7 @@ if (!isset($_SESSION["user_id"])) {
 
     require_once 'configuration.php';
     
-    $connect = mysqli_connect("mysql-d00192082.alwaysdata.net", "d00192082", "3820065Np2", "d00192082_blogusers");
+    $connect = mysqli_connect("", "", "", "");
     
     $dbConnection = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUsername, $dbPassword);
     $dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);   // set the PDO error mode to exception    
@@ -115,10 +115,10 @@ $dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);   // set
 
         <style>
 <?php
-$dbHost = 'mysql-d00192082.alwaysdata.net';
-$dbUsername = 'd00192082';
-$dbPassword = '3820065Np2';
-$dbName = 'd00192082_blogusers';
+$dbHost = '';
+$dbUsername = '';
+$dbPassword = '';
+$dbName = '';
 
 //Create connection and select DB
 $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName); 
@@ -277,10 +277,10 @@ ul.pagination a.current {
 }
 </style>
 <?php
-$db_username = 'd00192082'; // Your MYSQL Username.
-$db_password = '3820065Np2'; // Your MYSQL Password.
-$db_name = 'd00192082_blogusers'; // Your Database name.
-$db_host = 'mysql-d00192082.alwaysdata.net';
+$db_username = ''; // Your MYSQL Username.
+$db_password = ''; // Your MYSQL Password.
+$db_name = ''; // Your Database name.
+$db_host = '';
  
 $conDB = mysqli_connect($db_host, $db_username, $db_password,$db_name)or die('Error: Could not connect to database.');
 
@@ -395,7 +395,13 @@ while ($row = mysqli_fetch_array($results)) {
 
     if (floor($years) != 0) {
         echo floor($years);
-        echo ' year ago';
+        if(floor($years) > 1)
+        {
+            echo ' years ago';
+        } else {
+            echo ' year ago';
+        }
+        
     } else if (floor($months) != 0) {
         echo floor($months);
         echo ' months ago';

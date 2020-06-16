@@ -1,7 +1,7 @@
 <?php
 
 // configuration
-$connect = mysqli_connect("mysql-d00192082.alwaysdata.net", "d00192082", "3820065Np2", "d00192082_blogusers");
+$connect = mysqli_connect("", "", "", "");
 
 $row = $_POST['row'];
 $rowperpage = 3;

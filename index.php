@@ -50,10 +50,10 @@
 
 </style>
 <?php
-$db_username = 'd00192082'; // Your MYSQL Username.
-$db_password = '3820065Np2'; // Your MYSQL Password.
-$db_name = 'd00192082_blogusers'; // Your Database name.
-$db_host = 'mysql-d00192082.alwaysdata.net';
+$db_username = ''; // Your MYSQL Username.
+$db_password = ''; // Your MYSQL Password.
+$db_name = ''; // Your Database name.
+$db_host = '';
 
 $x = 1;
 
@@ -63,7 +63,7 @@ $conDB = mysqli_connect($db_host, $db_username, $db_password, $db_name)or die('E
 require_once 'header.php';
 require_once 'functions.php';
 
-$connect = mysqli_connect("mysql-d00192082.alwaysdata.net", "d00192082", "3820065Np2", "d00192082_blogusers");
+$connect = mysqli_connect("", "", "", "");
 ?>  
 
 <?php if (isset($_SESSION["user_name"])) {
@@ -145,9 +145,9 @@ $connect = mysqli_connect("mysql-d00192082.alwaysdata.net", "d00192082", "382006
                                 <p class="text-muted" style="word-wrap: break-word;"><?php echo $description; ?></p>
                                 <footer class="post-footer d-flex align-items-center"><a href="#" class="author d-flex align-items-center flex-wrap">
                                         <a href="userProfileVisitor.php?userId=<?php echo $row["userId"]?>"><div class="avatar"><img src="<?php echo $row["uploaderImage"] ?>" alt="..." style="width: 100%; height: 100%; border-radius: 50%;"></div></a>
-                                        <a href="userProfileVisitor.php?userId=<?php echo $row["userId"]?>"><div class="title"><span style="font-size: 12px;"><?php echo $row["name"]; ?></span></div></a>
+                                        <a href="userProfileVisitor.php?userId=<?php echo $row["userId"]?>"><div class="title"><span><?php echo $row["name"]; ?></span></div></a>
                                     <div class="date"><i class="icon-clock"></i> 
-                                        <?php
+                                        <?php 
                                         $a = new \DateTime($row["date"]);
                                         $b = new \DateTime;
 
@@ -157,7 +157,13 @@ $connect = mysqli_connect("mysql-d00192082.alwaysdata.net", "d00192082", "382006
 
                                         if (floor($years) != 0) {
                                             echo floor($years);
-                                            echo ' year ago';
+                                            if(floor($years) > 1)
+                                            {
+                                                echo ' years ago';
+                                            } else {
+                                                echo ' year ago';
+                                            }
+                                            
                                         } else if (floor($months) != 0) {
                                             echo floor($months);
                                             echo ' months ago';
@@ -177,22 +183,14 @@ $connect = mysqli_connect("mysql-d00192082.alwaysdata.net", "d00192082", "382006
                         <?php
                     }
                     ?>  
-
-
-
-
-
-
-                        <div class="wrap" style="position: absolute; display: inline-block; bottom: 5%; left: 25%;">
+                    <div class="after"></div>
+                </div>
+				<div class="wrap" style="display: inline-block; bottom: 5%; left: 25%;">
 
                         <?php
                         echo pagination($statement, $per_page, $page, $url = '?');
                         ?> 
                     </div><!-- .wrap -->
-                    
-                    
-                    <div class="after"></div>
-                </div>
         </main>
         <aside class="col-lg-4">
             <!-- Widget [Search Bar Widget]-->

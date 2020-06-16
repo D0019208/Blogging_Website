@@ -3,7 +3,7 @@
 require_once 'configuration.php';
 require_once "error_messages.php"; 
 
-$conn = mysqli_connect('mysql-d00192082.alwaysdata.net', 'd00192082', '3820065Np2', 'd00192082_blogusers');
+$conn = mysqli_connect('', '', '', '');
 
 function newPendingUser($dbConnection, $token, $email, $expiry_time_stamp) {
     /* Check that user is not already user_added  */
@@ -194,10 +194,10 @@ function getEmail($email) {
 
 function pagination($query, $per_page = 10, $page = 1, $url = '?') {
 
-    $db_username = 'd00192082'; // Your MYSQL Username.
-    $db_password = '3820065Np2'; // Your MYSQL Password.
-    $db_name = 'd00192082_blogusers'; // Your Database name.
-    $db_host = 'mysql-d00192082.alwaysdata.net';
+    $db_username = ''; // Your MYSQL Username.
+    $db_password = ''; // Your MYSQL Password.
+    $db_name = ''; // Your Database name.
+    $db_host = '';
 
     $conDB = mysqli_connect($db_host, $db_username, $db_password, $db_name)or die('Error: Could not connect to database.');
 

@@ -8,10 +8,10 @@ try {
 
     $localHostSiteFolderName = "AndreaWebsite";
 
-    $localhostDatabaseName = "d00192082_blogusers";
-    $localHostDatabaseHostAddress = "mysql-d00192082.alwaysdata.net";
-    $localHostDatabaseUserName = "d00192082";
-    $localHostDatabasePassword = "3820065Np2";
+    $localhostDatabaseName = "";
+    $localHostDatabaseHostAddress = "";
+    $localHostDatabaseUserName = "";
+    $localHostDatabasePassword = "";
 
 
 

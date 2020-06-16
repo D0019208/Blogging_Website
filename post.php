@@ -74,7 +74,7 @@ require_once 'functions.php';
     <div class="row">
         <!-- Latest Posts -->
         <?php
-        $connect = mysqli_connect("mysql-d00192082.alwaysdata.net", "d00192082", "3820065Np2", "d00192082_blogusers");
+        $connect = mysqli_connect("", "", "", "");
         addViews($dbConnection, $_GET["id"]);
         $commentsCount = showCommentsCount($dbConnection, $_GET["id"]);
         
@@ -129,7 +129,13 @@ require_once 'functions.php';
 
                                     if (floor($years) != 0) {
                                         echo floor($years);
-                                        echo ' year ago';
+                                        if(floor($years) > 1)
+                                        {
+                                            echo ' years ago';
+                                        } else {
+                                            echo ' year ago';
+                                        }
+                                        
                                     } else if (floor($months) != 0) {
                                         echo floor($months);
                                         echo ' months ago';

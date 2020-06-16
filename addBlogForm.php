@@ -1,7 +1,7 @@
 <?php
 require_once 'header.php';
 require_once 'error_messages.php';
-$connect = mysqli_connect("mysql-d00192082.alwaysdata.net", "d00192082", "3820065Np2", "d00192082_blogusers");
+$connect = mysqli_connect("", "", "", "");
 ?> 
 <style> 
     #title

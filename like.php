@@ -4,7 +4,7 @@
         session_start(); 
     }  
 include 'functions.php';
-$conn = mysqli_connect('mysql-d00192082.alwaysdata.net', 'd00192082', '3820065Np2', 'd00192082_blogusers');
+$conn = mysqli_connect('', '', '', '');
 
 // lets assume a user is logged in with id $user_id
   $userId = $_SESSION["user_id"];

@@ -3,7 +3,7 @@ session_start();
 if(!empty($_POST["id"])){
 
     // Include the database configuration file
-    $db = new mysqli("mysql-d00192082.alwaysdata.net", "d00192082", "3820065Np2", "d00192082_blogusers");
+    $db = new mysqli("", "", "", "");
     
     
     

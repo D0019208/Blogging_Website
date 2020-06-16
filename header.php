@@ -80,10 +80,10 @@ if (empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === "off") {
 
         <style>
 <?php
-$dbHost = 'mysql-d00192082.alwaysdata.net';
-$dbUsername = 'd00192082';
-$dbPassword = '3820065Np2';
-$dbName = 'd00192082_blogusers';
+$dbHost = '';
+$dbUsername = '';
+$dbPassword = '';
+$dbName = '';
 
 //Create connection and select DB
 $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);

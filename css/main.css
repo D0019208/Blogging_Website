@@ -569,3 +569,17 @@ ul.pagination a.current {
     background:#0d7963;
     color:#fff;
 }
+
+
+
+.post .date {
+    max-width: 136.6px; 
+    letter-spacing: 0 !important; 
+    word-wrap: break-word;
+}
+
+.title {
+    font-size: 12px; 
+    max-width: 100px; 
+    word-wrap: break-word;
+}

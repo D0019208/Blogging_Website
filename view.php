@@ -4,10 +4,10 @@ session_start();
 $_GET['id'] = 1;
 if(!empty($_GET['id'])){
     //DB details
-    $dbHost     = 'mysql-d00192082.alwaysdata.net';
-    $dbUsername = 'd00192082';
-    $dbPassword = '3820065Np2';
-    $dbName     = 'd00192082_blogusers';
+    $dbHost     = '';
+    $dbUsername = '';
+    $dbPassword = '';
+    $dbName     = '';
     
     //Create connection and select DB
     $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
